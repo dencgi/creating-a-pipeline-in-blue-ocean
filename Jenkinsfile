@@ -8,8 +8,22 @@ pipeline {
   }
   stages {
     stage('Build') {
+      parallel {
+        stage('Build') {
+          steps {
+            sh 'echo build'
+          }
+        }
+        stage('') {
+          steps {
+            echo 'parallel'
+          }
+        }
+      }
+    }
+    stage('Test') {
       steps {
-        sh 'npm install'
+        load 'test.groovy'
       }
     }
   }
