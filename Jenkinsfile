@@ -22,6 +22,9 @@ pipeline {
       }
     }
     stage('Test') {
+      environment {
+        CI = 'true'
+      }
       steps {
         load 'test.groovy'
       }
