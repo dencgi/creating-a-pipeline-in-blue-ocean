@@ -37,4 +37,7 @@ pipeline {
       }
     }
   }
+  environment {
+    toto = '123'
+  }
 }
