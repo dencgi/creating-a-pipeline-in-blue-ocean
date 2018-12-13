@@ -9,13 +9,12 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        load 'test.groovy'
+        load 'param.groovy'
       }
     }
     stage('Param') {
       steps {
-        load 'param.groovy'
-	param.toto()
+        load 'test.groovy'
       }
     }
   }
